@@ -1,3 +1,5 @@
+from cats import question
+import importlib
 from flask import Flask, render_template, url_for
 import dash
 import dash_core_components as dcc
@@ -6,9 +8,14 @@ import dash_html_components as html
 server = Flask(__name__)
 
 
+nums = [1, 2, 3, 4, 5]
+
+cats = question()
+
+
 @server.route('/')
 def index():
-    return 'Hello Flask app'
+    return render_template('index.html', nums=cats)
 
 
 app = dash.Dash(

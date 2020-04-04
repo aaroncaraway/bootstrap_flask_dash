@@ -1,0 +1,5 @@
+v-env
+history
+*.pyc
+.DS_Store
+.env
